@@ -13,9 +13,22 @@ const articles = [
   }
 ];
 const imagesAndVideos = [[2, 1, 4, 5, 3, 12, 3], ["asd", 1, "asdqwe", 4]];
+
+const albums = [
+  {
+    name: "asd",
+    picture: "no",
+    soundFile: "asdq3123124"
+  },
+  {
+    name: "asd",
+    picture: "no",
+    soundFile: "asdq3123124"
+  }
+];
 //Event Handlers
 menuButtons.forEach(button =>
   button.addEventListener("click", () =>
-    ui.renderPage(menuButtons, button.className, imagesAndVideos)
+    ui.renderPage(menuButtons, button.className, albums)
   )
 );

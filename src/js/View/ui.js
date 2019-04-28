@@ -27,7 +27,7 @@ class UI {
         this.renderGallery(source);
         break;
       case "nav-discography":
-        this.renderDiscography();
+        this.renderDiscography(source);
         break;
       case "nav-td":
         this.renderTourDates();
@@ -94,6 +94,20 @@ class UI {
       source.src = `src/Videos/${video}`;
       vid.controls = true;
       this.display.appendChild(vid);
+    });
+  }
+
+  //ToDo: Slideshow
+  renderDiscography(source) {
+    this.display.innerHTML = "";
+    source.forEach(album => {
+      const container = document.createElement("div");
+      container.innerHTML = `<h1>${album.name}</h1>
+      <img src='src/albums/pictures/${album.picture}'>
+      <audio controls><source src='src/albums/sound/${
+        album.soundFile
+      }></audio>`;
+      this.display.appendChild(container);
     });
   }
 }
