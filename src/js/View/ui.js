@@ -18,13 +18,13 @@ class UI {
     });
   }
 
-  renderBackgroundFor(pageName, articles) {
+  renderBackgroundFor(pageName, source) {
     switch (pageName) {
       case "nav-news":
-        this.renderNews(articles);
+        this.renderNews(source);
         break;
       case "nav-gallery":
-        this.renderGallery();
+        this.renderGallery(source);
         break;
       case "nav-discography":
         this.renderDiscography();
@@ -54,5 +54,46 @@ class UI {
     });
   }
 
-  renderGallery()
+  renderGallery(imagesAndVideos) {
+    const imagesBtn = document.createElement("button");
+    const videosBtn = document.createElement("button");
+    imagesBtn.addEventListener("click", () =>
+      this.renderImages(imagesAndVideos)
+    );
+    videosBtn.addEventListener("click", () =>
+      this.renderVideos(imagesAndVideos)
+    );
+    imagesBtn.textContent = "Images";
+    videosBtn.textContent = "Videos";
+    this.display.innerHTML = "";
+    this.display.appendChild(imagesBtn);
+    this.display.appendChild(videosBtn);
+  }
+
+  renderImages(source) {
+    this.display.innerHTML = "";
+    const backBtn = document.createElement("button");
+    backBtn.textContent = "Back To Gallery";
+    backBtn.addEventListener("click", () => this.renderGallery(source));
+    this.display.appendChild(backBtn);
+    source[0].forEach(image => {
+      const img = document.createElement("img");
+      img.src = `src/Pictures/${image}`;
+      this.display.appendChild(img);
+    });
+  }
+  renderVideos(source) {
+    this.display.innerHTML = "";
+    const backBtn = document.createElement("button");
+    backBtn.textContent = "Back To Gallery";
+    backBtn.addEventListener("click", () => this.renderGallery(source));
+    this.display.appendChild(backBtn);
+    source[1].forEach(video => {
+      const vid = document.createElement("video");
+      const source = document.createElement("source");
+      source.src = `src/Videos/${video}`;
+      vid.controls = true;
+      this.display.appendChild(vid);
+    });
+  }
 }
