@@ -4,22 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="src/css/main.css" />
-    <link rel="stylesheet" href="src/css/navbar.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <title>SoulCake</title>
   </head>
   <body>
     <div class="container">
-      <header id="logo"></header>
-      <nav>
-        <ul>
-          <li class="nav-news">News</li>
-          <li class="nav-gallery">Gallery</li>
-          <li class="nav-discography">Discography</li>
-          <li class="nav-td">Tour Dates</li>
-          <li class="nav-store">Store</li>
-          <li class="nav-connect">Connect</li>
+      <div class="jumbotron"></div>
+      <nav class="navbar navbar-nav bg-light navbar-light navbar-expand-lg">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-news nav-item">
+            <a href="#" class="nav-link">News</a>
+          </li>
+          <li class="nav-gallery nav-item">
+            <a href="#" class="nav-link">Gallery</a>
+          </li>
+          <li class="nav-discography nav-item">
+            <a href="#" class="nav-link">Discography</a>
+          </li>
+          <li class="nav-td nav-item">
+            <a href="#" class="nav-link">Tour Dates</a>
+          </li>
+          <li class="nav-store nav-item">
+            <a href="#" class="nav-link">Store</a>
+          </li>
+          <li class="nav-connect nav-item">
+            <a href="#" class="nav-link">Connect</a>
+          </li>
         </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
       </nav>
 
       <main></main>
